@@ -1,3 +1,6 @@
+$navbar-default-bg: #262525;
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 #logo {
@@ -12,8 +15,4 @@
 #logo:hover {
   color: pink;
   text-decoration: none;
-}
-
-.navbar {
-  background-color: red;
 }
