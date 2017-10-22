@@ -1,7 +1,8 @@
-$navbar-default-bg: #262525;
+$navbar-default-bg: #59315E;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
 
 #logo {
   float: left;
@@ -15,4 +16,50 @@ $navbar-default-bg: #262525;
 #logo:hover {
   color: pink;
   text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.btn-lg {
+  margin: 40px 20px 20px;
+  background-color: #F8402A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif;
+}
+
+.jumbotron {
+  background-image: asset-url("food2.jpg");
+  background-size: cover;
+  height: 350px;
+  color: #262525;
+}
+
+#front-page-grid-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#footer-container .text-muted {
+  margin: 20px 0;
 }
