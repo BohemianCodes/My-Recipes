@@ -1,1 +1,19 @@
 @import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fcfcfc;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: red;
+}
