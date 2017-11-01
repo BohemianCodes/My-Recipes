@@ -1,0 +1,13 @@
+<h1> Recipes Index </h1>
+
+<% @recipes.each do |recipe| %>
+  <div class ="panel panel-info recipe-panel">
+    <div class="panel-heading">
+      <h3><%= recipe.name %></h3>
+      <small>Created <%= time_ago_in_words(recipe.created_at) %> ago </small>
+    </div>
+    <div class="panel-body">
+      <p><%= truncate(recipe.description, length: 150) %></p>
+    </div>
+  </div>
+<% end %>
