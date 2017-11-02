@@ -1,4 +1,4 @@
-$navbar-default-bg: #59315E;
+$navbar-default-bg: #C9302C;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -16,6 +16,10 @@ $navbar-default-bg: #59315E;
 #logo:hover {
   color: pink;
   text-decoration: none;
+}
+
+.navbar-nav a {
+  color: white !important;
 }
 
 .center {
@@ -41,6 +45,11 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   height: 350px;
   color: #262525;
+}
+
+.jumbotron h1,
+.jumbotron h2 {
+  text-shadow: 2px 2px white;
 }
 
 #front-page-grid-container {
@@ -73,4 +82,8 @@ body {
 
 .recipe-panel .panel-heading h3 {
   margin-top: 5px !important;
+}
+
+.recipe-panel .panel-heading a:hover {
+  text-decoration: none;
 }
