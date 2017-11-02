@@ -3,7 +3,7 @@
 <% @recipes.each do |recipe| %>
   <div class ="panel panel-info recipe-panel">
     <div class="panel-heading">
-      <h3><%= recipe.name %></h3>
+      <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
       <small>Created <%= time_ago_in_words(recipe.created_at) %> ago </small>
     </div>
     <div class="panel-body">
