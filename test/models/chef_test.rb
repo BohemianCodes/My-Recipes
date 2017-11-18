@@ -57,6 +57,7 @@ class ChefTest < ActiveSupport::TestCase
     mixed_email = "JohN@GmAiL.CoM"
     @chef.email = mixed_email
     @chef.save
+    #assert_equal compares two arguments to see if they are the same
     assert_equal mixed_email.downcase, @chef.reload.email
   end
 

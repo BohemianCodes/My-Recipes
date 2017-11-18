@@ -1,4 +1,25 @@
-<div class="panel panel-warning">
+<%= render 'shared/page_title', title: @recipe.name %>
+
+<div class="well col-md-8 col-md-offset-2">
+  <h4 class="center description"><strong>Steps: </strong></h4>
+  <hr />
+  <%= simple_format(@recipe.description) %>
+  <hr />
+  <div class="pull-right">
+    <p class="center">
+      <em>Created by:</em>
+    </p>
+    <p class="center">
+      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+    </p>
+    <p class="center">
+      <small><%= @recipe.chef.chefname.capitalize %></small>
+      <div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
+    </p>
+  </div>
+</div>
+
+<!-- <div class="panel panel-warning">
   <div class="panel-heading">
     <h1><%= @recipe.name.capitalize %></h1>
   </div>
@@ -8,4 +29,4 @@
   <div class="panel-footer">
     <p><small> created by <%= @recipe.chef.chefname %> </small></p>
   </div>
-</div>
+</div> -->
