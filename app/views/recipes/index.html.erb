@@ -1,10 +1,20 @@
 <%= render 'shared/page_title', title: 'Recipe Index' %>
 
 <% @recipes.each do |recipe| %>
-  <div class ="panel panel-info recipe-panel">
-    <div class="panel-heading">
-      <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
-      <small>Created <%= time_ago_in_words(recipe.created_at) %> ago </small>
+  <div class ="panel panel-warning recipe-panel">
+    <div class="panel-heading row">
+      <div class="col-sm-10">
+        <h3>
+          <%= link_to recipe.name, recipe_path(recipe) %>
+        </h3>
+        <small>Created <%= time_ago_in_words(recipe.created_at) %> ago
+        </small>
+      </div>
+      <div class="col-sm-2">
+        <section class="chef-img">
+          <%= gravatar_for(recipe.chef, size: 70) %>
+        </section>
+      </div>
     </div>
     <div class="panel-body">
       <p><%= truncate(recipe.description, length: 150) %></p>
