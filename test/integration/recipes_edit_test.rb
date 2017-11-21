@@ -17,7 +17,16 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
   end
 
   test "successfully added recipe" do
-
+    get edit_recipe_path(@recipe)
+    assert_template 'recipes/edit'
+    updated_name = "Updated Recipe name"
+    updated_description = "Updated Recipe Description xxxxxxxxxxx"
+    patch recipe_path(@recipe), params: { recipe: { name: updated_name, description: updated_description } }
+    assert_redirected_to @recipe
+    assert_not flash.empty?
+    @recipe.reload
+    assert_match updated_name, @recipe.name
+    assert_match updated_description, @recipe.description
   end
 
 end
