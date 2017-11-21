@@ -26,7 +26,7 @@ $navbar-default-bg: #C9302C;
   text-align: center;
 }
 
-.btn-lg {
+.btn-sign-up {
   margin: 40px 20px 20px;
   background-color: #F8402A;
 }
@@ -100,4 +100,16 @@ body {
 
 .panel-heading h1 {
   margin-top: 7px;
+}
+
+// form
+
+textarea {
+    resize: none;
+    overflow-x: hidden;
+}
+
+.btn-red {
+  background-color: #F8402A;
+  color: white; 
 }

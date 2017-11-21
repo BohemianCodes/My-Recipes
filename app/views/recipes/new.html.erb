@@ -1,0 +1,50 @@
+<%= render 'shared/page_title', title: "Create New Recipe" %>
+
+<% if @recipe.errors.any? %>
+  <div class="row">
+    <div class="col-md-8 col-offset-2">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h2 class="panel-title errors-title">
+            <%= pluralize(@recipe.errors.count, "error") %>
+            prohibited this <%= @recipe.class %> from being saved.
+          </h2>
+        </div>  <!--panel-heading -->
+        <div class="panel-body errors-body">
+          <ul>
+            <% @recipe.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>  <!-- panel -->
+    </div>  <!-- col -->
+  </div> <!-- row -->
+
+<% end %> <!-- if errors -->
+
+<%= form_for(@recipe, :html => {class: 'form-horizontal', role: 'form'}) do |form| %>
+  <div class="form-group">
+      <%= form.label :name, class: "control-label col-md-2" %>
+    <div class="col-md-8">
+    <%= form.text_field :name, class: "form-control", placeholder: "Recipe Name", autofocus: true %>
+    </div>
+  </div> <!--form group -->
+
+  <div class="form-group">
+      <%= form.label :description, class: "control-label col-md-2" %>
+    <div class="col-md-8">
+    <%= form.text_area :description, class: "form-control", placeholder: "What steps do we need to follow?", rows: 15 %>
+    </div>
+  </div> <!--form group -->
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <%= form.submit "Submit", class: "btn btn-default btn-red btn-lg" %>
+      </div>
+    </div>
+  </div> <!--form group -->
+<% end %>
+
+<div class="center">
+  [<%= link_to "Cancel and Return", recipes_path %>]
+</div>
