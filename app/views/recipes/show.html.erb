@@ -2,26 +2,32 @@
 
 <div class="well col-md-8 col-md-offset-2">
   <h4 class="center description"><strong>Steps: </strong></h4>
-  <hr />
-  <%= simple_format(@recipe.description) %>
-  <hr />
-  <div class="pull-right">
-    <p class="center">
-      <em>Created by:</em>
-    </p>
-    <p class="center">
-      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
-    </p>
-    <p class="center">
-      <small><%= @recipe.chef.chefname.capitalize %></small>
-      <div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
-    </p>
+  <div class="row">
+    <div class="col-xs-10">
+      <hr />
+      <%= simple_format(@recipe.description) %>
+      <hr />
+    </div>
+    <div class="col-xs-2">
+
+      <p class="center">
+        <em>Created by:</em>
+      </p>
+      <p class="center">
+        <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+      </p>
+      <p class="center">
+        <small><%= @recipe.chef.chefname.capitalize %></small>
+        <div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
+      </p>
+    </div>
   </div>
   <div>
     <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-default btn-red" %>
     <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure you want to delete '#{@recipe.name}'?"}, class: "btn btn-default btn-red" %>
   </div>
-</div>
+</div> <!--well-->
+
 <div class="center">
-  [<%= link_to "Return", recipes_path %>]
+  [<%= link_to "Return to Index", recipes_path %>]
 </div>
