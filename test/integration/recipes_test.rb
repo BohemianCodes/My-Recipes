@@ -28,6 +28,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.name, response.body
     assert_match @recipe.description, response.body
     assert_match @chef.chefname, response.body
+    assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit Recipe"
+    assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete Recipe"
   end
 
   test "create new valid recipe" do
@@ -48,9 +50,9 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_template 'recipes/new'
     assert_no_difference 'Recipe.count' do
       post recipes_path, params: { recipe: {name: " ", description: " "}}
-    assert_template 'recipes/new'
-    assert_select 'h2.errors-title'
-    assert_select 'div.errors-body'
+      assert_template 'recipes/new'
+      assert_select 'h2.errors-title'
+      assert_select 'div.errors-body'
     end
   end
 
