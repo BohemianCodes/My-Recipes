@@ -22,16 +22,6 @@
     <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure you want to delete '#{@recipe.name}'?"}, class: "btn btn-default btn-red" %>
   </div>
 </div>
-
-
-<!-- <div class="panel panel-warning">
-  <div class="panel-heading">
-    <h1><%= @recipe.name.capitalize %></h1>
-  </div>
-  <div class="panel-body">
-    <%= @recipe.description %>
-  </div>
-  <div class="panel-footer">
-    <p><small> created by <%= @recipe.chef.chefname %> </small></p>
-  </div>
-</div> -->
+<div class="center">
+  [<%= link_to "Return", recipes_path %>]
+</div>
