@@ -14,13 +14,19 @@ $navbar-default-bg: #C9302C;
 }
 
 #logo:hover {
-  color: pink;
+  color: grey;
   text-decoration: none;
 }
 
 .navbar-nav a {
   color: white !important;
 }
+
+.dropdown-menu a {
+  color: black !important;
+}
+
+
 
 .center {
   text-align: center;
@@ -29,11 +35,11 @@ $navbar-default-bg: #C9302C;
 
 .btn-sign-up {
   margin: 40px 20px 20px;
-  background-color: #F8402A;
+  background-color: $main-red;
 }
 
 #front-page-grid-container .btn {
-  background-color: #F8402A;
+  background-color: $main-red;
   color: #fcfcfc;
 }
 
@@ -111,6 +117,6 @@ textarea {
 }
 
 .btn-red {
-  background-color: #F8402A;
+  background-color: $main-red;
   color: white;
 }
